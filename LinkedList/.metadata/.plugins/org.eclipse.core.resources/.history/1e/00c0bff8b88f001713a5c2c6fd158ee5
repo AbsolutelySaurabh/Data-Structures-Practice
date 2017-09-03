@@ -1,0 +1,44 @@
+package LinkedList;
+import java.util.*;
+
+public class LinkedList {
+	
+	public static Scanner s;
+	public static void main(String[] args){
+		
+	    s = new Scanner(System.in);
+		takeInput();
+		
+	}
+
+	private static void takeInput() {
+		
+		//takeInput form the useR
+		System.out.println("Enter the head: ");
+		int n = s.nextInt();
+		Node head = null;
+	
+		while(n!=-1){
+			
+			Node newNode = new Node(n);
+			if(head == null){
+				head = newNode;
+			}else{
+				
+				Node temp = head;
+				while(temp.next!= null){
+					
+					temp = temp.next;
+				}
+				temp.next = newNode;
+				
+			}
+			
+			System.out.println("Enter nextElement: ");
+			n = s.nextInt();
+			
+		}
+		
+	}
+
+}

@@ -1,0 +1,80 @@
+package LinkedList;
+import java.util.*;
+
+public class LinkedList {
+	
+	public static Scanner s;
+	public static void main(String[] args){
+		
+	    s = new Scanner(System.in);
+		Node head = takeInput();
+		printOutput(head);
+		
+		System.out.println("Entet the position of the node you want to delete");
+		int position = s.nextInt();
+		Node newHead = deleteAtIth(head,head, position, 0);
+		printOutput(newHead);
+			
+	}
+	
+	public static void printOutput(Node head){
+		
+		if(head==null){
+			return;
+		}
+		System.out.println(head.data);
+		printOutput(head.next);	
+	}
+	
+	public static Node deleteAtIth(Node head, Node temp, int i, int position){
+		
+		if(head.next ==null || temp==null){
+			return head;
+		}
+		
+		if(i==0){
+			
+			head = head.next;
+			return head;
+		}else{
+		
+			if(i-1==position){
+				temp.next = temp.next.next;
+				return head;
+			}
+		}
+		
+		return deleteAtIth(head, temp.next, i, ++position);
+		
+		
+	}
+	
+	public static Node takeInput() {
+		
+		//takeInput form the useR
+		System.out.println("Enter the head: ");
+		int n = s.nextInt();
+		Node head = null;
+	
+		while(n!=-1){
+			
+			Node newNode = new Node(n);
+			if(head == null){
+				head = newNode;
+			}else{
+				
+				Node temp = head;
+				while(temp.next!= null){
+					
+					temp = temp.next;
+				}
+				temp.next = newNode;
+				
+			}
+			System.out.println("Enter next element: ");
+			n = s.nextInt();	
+		}
+		return head;
+	}
+
+}
