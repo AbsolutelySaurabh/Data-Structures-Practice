@@ -1,4 +1,4 @@
-INDEX VERSION 1.129+C:\Users\Saurabh\Desktop\Hackerrank\DS\Coding Ninjas\Java\LinkedList\.metadata\.plugins\org.eclipse.jdt.core
+INDEX VERSION 1.130+C:\Users\Saurabh\Desktop\Hackerrank\DS\Coding Ninjas\Java\LinkedList\.metadata\.plugins\org.eclipse.jdt.core
 909861168.index
 3193238650.index
 1392172246.index
