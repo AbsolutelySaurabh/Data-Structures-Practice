@@ -4,3 +4,6 @@
 /CheckTreeContainsX.class
 /CheckNodesGreaterThanX.class
 /SumGreateThanX.class
+/TopView.class
+/CountLeafNodes.class
+/ReplaceNodeWithDepth.class

@@ -45,7 +45,7 @@ public class BinaryTreeUse {
 		return root;
 	}
 	
-	//Need to reolve this method
+	//Need to resolve this method
 	public static void printBinaryTree(BinaryTreeNode<Integer> root) {
 		if(root == null) {
 			return;
