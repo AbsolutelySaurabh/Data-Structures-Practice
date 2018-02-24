@@ -1,4 +1,4 @@
-package Algos;
+package rookie_rank_4;
 
 import java.util.Scanner;
 
