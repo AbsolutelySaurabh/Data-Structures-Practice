@@ -13,6 +13,7 @@ public class MaxmPermutation {
 		for(int i=0;i<str.length();i++) {
 			for(int j=i;j<str.length();j++) {
 				String sub_str = str.substring(i,  j+1);
+				System.out.println(sub_str + " ");
 				if(map.containsKey(sub_str)) {
 					flag = 1;
 					map.put(sub_str, map.get(sub_str)+ 1);
@@ -67,6 +68,7 @@ public class MaxmPermutation {
 			
 			map.clear();
 			flag=0;
+			max = null;
 			t--;
 		}
 	}
