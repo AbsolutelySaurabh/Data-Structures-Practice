@@ -19,16 +19,6 @@ public class RansomeNote {
 		System.out.println(note.length()+ "...");
 		String[] arr_n = note.split(" ");
 		
-//		for(int i=0;i<arr_m.length;i++) {
-//			System.out.print(arr_m[i] + " ");
-//		}
-//		System.out.println(" ");
-//		for(int i=0;i<arr_n.length;i++) {
-//			System.out.print(arr_n[i] + " ");
-//		}
-		
-		//System.out.println(arr_m.length + " -> " + arr_n.length);
-		
 		HashMap<String, Integer> map_magazine = new HashMap(), map_note = new HashMap();
 		//input in hashmap
 		for(int i=0;i<arr_m.length;i++) {
@@ -49,16 +39,16 @@ public class RansomeNote {
 			}
 		}
 //		
-//		for(String key: map_magazine.keySet()) {
-//			
-//			System.out.print(key + "->" + map_magazine.get(key));
-//		}
-//		System.out.println(" ");
-//
-//		for(String key: map_note.keySet()) {
-//			
-//			System.out.print(key + "->" + map_note.get(key));
-//		}
+		for(String key: map_magazine.keySet()) {
+			
+			System.out.print(key + "->" + map_magazine.get(key));
+		}
+		System.out.println(" ");
+
+		for(String key: map_note.keySet()) {
+			
+			System.out.print(key + "->" + map_note.get(key));
+		}
 //		
 		
 		int flag = 1;
