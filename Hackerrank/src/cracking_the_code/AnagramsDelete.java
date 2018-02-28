@@ -1,4 +1,4 @@
-package strings;
+package cracking_the_code;
 
 import java.util.Scanner;
 
@@ -38,6 +38,7 @@ public class AnagramsDelete {
 		
 		System.out.println(countAnagrams(s1, s2));
 		s.close();
+
 	}
 
 }

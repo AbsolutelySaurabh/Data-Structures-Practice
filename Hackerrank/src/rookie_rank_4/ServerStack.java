@@ -46,5 +46,6 @@ public class ServerStack {
 			height[i] = s.nextInt();
 		}
 		System.out.println(solveStack(position, height));
+		s.close();
 	}
 }

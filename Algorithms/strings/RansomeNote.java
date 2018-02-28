@@ -8,8 +8,8 @@ public class RansomeNote {
 	public static void main(String[] args) {
 		
 		Scanner s = new Scanner(System.in);
-		int m = s.nextInt();
-		int n = s.nextInt();
+//		int m = s.nextInt();
+//		int n = s.nextInt();
 		
 		String magazine = s.nextLine();
 		System.out.println(magazine.length() + "...");
@@ -19,7 +19,7 @@ public class RansomeNote {
 		System.out.println(note.length()+ "...");
 		String[] arr_n = note.split(" ");
 		
-		HashMap<String, Integer> map_magazine = new HashMap(), map_note = new HashMap();
+		HashMap<String, Integer> map_magazine = new HashMap<String, Integer>(), map_note = new HashMap<String, Integer>();
 		//input in hashmap
 		for(int i=0;i<arr_m.length;i++) {
 			if(map_magazine.containsKey(arr_m[i])) {
@@ -73,6 +73,8 @@ public class RansomeNote {
 		}else {
 			System.out.println("No");
 		}
+		
+		s.close();
 			
 	}
 

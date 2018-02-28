@@ -14,6 +14,7 @@ public class Lexicographical {
 		if(s1.compareTo(s2) > 0) {
 			System.out.println("s1 > s2");
 		}
+		s.close();
 	}
 
 }

@@ -51,7 +51,7 @@ public class CubesAnCylinders {
 		}
 		
 		System.out.println(maximumPackages(arr_packs_length, arr_packs_copy, arr_cyl_length, arr_cyl_max));
-		
+		s.close();
 	}
 
 }

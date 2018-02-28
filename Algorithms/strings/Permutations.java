@@ -17,5 +17,6 @@ public class Permutations {
 		Scanner s = new Scanner(System.in);
 		String input = s.nextLine();
 		permutationsHelper(input,"");
+		s.close();
 	}
 }

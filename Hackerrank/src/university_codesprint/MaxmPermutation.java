@@ -4,7 +4,7 @@ import java.util.*;
 
 public class MaxmPermutation {
 	
-	static HashMap<String, Integer> map = new HashMap();
+	static HashMap<String, Integer> map = new HashMap<String, Integer>();
 	static int flag = 0;
 	static String max = null;
 	
@@ -71,6 +71,7 @@ public class MaxmPermutation {
 			max = null;
 			t--;
 		}
+		s.close();
 	}
 
 }

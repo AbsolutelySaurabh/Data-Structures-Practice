@@ -18,6 +18,7 @@ public class CheckReverse {
 			
 			System.out.println("false");
 		}
+		s.close();
 		
 	}
 	

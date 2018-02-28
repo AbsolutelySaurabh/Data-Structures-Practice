@@ -1,17 +1,12 @@
 package university_codesprint;
 
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map.Entry;
 import java.util.Scanner;
-import java.util.Set;
-
 
 public class SummerLesson {
 	
     static int[] howManyStudents(int classes, int[] arr) {
         
-        int[] results = new int[classes];
 		HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
 		for(int i=0;i<classes;i++) {
 			map.put(i, 0);

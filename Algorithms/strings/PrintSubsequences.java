@@ -7,6 +7,7 @@ public class PrintSubsequences {
 		Scanner s = new Scanner(System.in);	
 		String i = s.nextLine();
 		printSubsequences(i);
+		s.close();
 		
 	}
 	

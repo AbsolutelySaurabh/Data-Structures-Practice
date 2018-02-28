@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class checkMate {
 	
 	public static int count = 0;
-	
 	public static void checkKnight(int i, int j, char[][] arr) {
 		System.out.println("Knight j: " + j);
 		if(j>2) {
@@ -74,7 +73,7 @@ public class checkMate {
 
 	}
 	
-	public static void checkMate(char[][] arr) {
+	public static void check_mate(char[][] arr) {
 		
 		for(int i=1;i<2;i++) {
 			//checking only for the 7th row
@@ -101,8 +100,9 @@ public class checkMate {
 				arr[i][j] = s.next().charAt(0);
 			}
 		}
-		checkMate(arr);
+		check_mate(arr);
 		System.out.println("Total ways: " + count);
+		s.close();
 	}
 
 }

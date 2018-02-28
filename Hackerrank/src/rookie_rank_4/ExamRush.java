@@ -62,6 +62,7 @@ public class ExamRush {
 		}
 		
 		System.out.println(rush(arr, n, hours));
+		s.close();
 		
 	}
 
