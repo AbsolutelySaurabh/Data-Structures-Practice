@@ -217,27 +217,20 @@ public class LinkedList {
 	}
 	
 	public static Node takeInput() {
-		
-		//takeInput form the useR
 		Scanner s = new Scanner(System.in);
 		System.out.println("Enter the head: ");
 		int n = s.nextInt();
 		Node head = null;
-	
+		Node temp = null;
 		while(n!=-1){
 			
 			Node newNode = new Node(n);
 			if(head == null){
 				head = newNode;
+				temp = head;
 			}else{
-				
-				Node temp = head;
-				while(temp.next!= null){
-					
-					temp = temp.next;
-				}
 				temp.next = newNode;
-				
+				temp = temp.next;
 			}
 			System.out.println("Enter next element: ");
 			n = s.nextInt();	

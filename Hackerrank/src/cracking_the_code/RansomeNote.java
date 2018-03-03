@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class RansomeNote {
 
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		
 		Scanner s = new Scanner(System.in);
