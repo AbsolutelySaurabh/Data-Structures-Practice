@@ -67,6 +67,5 @@ public class ReplaceNodeWithDepth {
 		}else {
 			return right+1;
 		}
-		
 	}
 }
