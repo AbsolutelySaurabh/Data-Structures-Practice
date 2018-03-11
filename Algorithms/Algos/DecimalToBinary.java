@@ -3,7 +3,6 @@ import java.util.*;
 public class DecimalToBinary {
 	
 	private static String convertToBinary(int n) {
-		
 		String str = "";
 		while(n>0) {
 			int rem = n%2;
@@ -60,5 +59,4 @@ public class DecimalToBinary {
 		
 		s.close();
 	}
-
 }

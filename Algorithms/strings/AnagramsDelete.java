@@ -4,11 +4,12 @@ import java.util.Scanner;
 
 public class AnagramsDelete {
 	
-	//take arrays of length 26 as the maxn unique character in abcde is 26 no.
+	//take arrays of length 26 as the maximum unique character in abcde is 26 no.
+	//can also be solved using just one array, by decreasing the values if occuring in second one.
 	
 	public static int countAnagrams(String s1, String s2) {
 		
-	//maintain two count1, count2 arrays, containign the frequency of each character in string
+	//maintain two count1, count2 arrays, containing the frequency of each character in string
 	int[] count1 = new int[26], count2 = new int[26];
 	//frequency of each character in s1
 	for(int i=0;i<s1.length();i++) {

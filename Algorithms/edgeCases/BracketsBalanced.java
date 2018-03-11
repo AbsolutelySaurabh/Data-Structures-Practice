@@ -1,4 +1,4 @@
-package cracking_the_code;
+package edgeCases;
 
 /**
  * @author "AbsolutelySaurabh"
