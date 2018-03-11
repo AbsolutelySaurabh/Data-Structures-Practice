@@ -21,16 +21,14 @@ public class DetectCycle {
 		return detectCycle(head.next);
 	}
 		
-	@SuppressWarnings({ "rawtypes", "unchecked", "resource" })
-	public static DetectCycleNode takeInput() {
+	public static DetectCycleNode<Integer> takeInput() {
 		Scanner s = new Scanner(System.in);
 		System.out.println("Enter the head: ");
 		int n = s.nextInt();
-		DetectCycleNode head = null;
-		DetectCycleNode temp = null;
+		DetectCycleNode<Integer> head = null, temp = null;
 		while(n!=-1){
 			
-			DetectCycleNode newNode = new DetectCycleNode(n);
+			DetectCycleNode<Integer> newNode = new DetectCycleNode<Integer>(n);
 			if(head == null){
 				head = newNode;
 				temp = head;
