@@ -11,11 +11,11 @@ public class Fibonacci {
 		System.out.println("Recursive: " + fibonacci(n));
 		
 		//now trying the dp approach
-		int[] arr = new int[n+1];
-		//add the base cases to the array
-		arr[0] = 0;
-		arr[1] = 1;
-		System.out.println("DP: " + fibonacci(n, arr));
+		int[] memo = new int[n+1];
+		//add the base cases to the memo table
+		memo[0] = 0;
+		memo[1] = 1;
+		System.out.println("DP: " + fibonacci(n, memo));
 		s.close();
 	}
 
@@ -29,9 +29,9 @@ public class Fibonacci {
 		return fibonacci(n-1) + fibonacci(n-2);
 	}
 	
-	private static int fibonacci(int n, int[] arr) {
+	private static int fibonacci(int n, int[] memo) {
 		
-		//use an array to store values here with size() n+1;
+		//use an memoay to store values here with size() n+1;
 		if(n==0) {
 			return 0;
 		}
@@ -39,11 +39,11 @@ public class Fibonacci {
 			return 1;
 		}
 		
-		if(arr[n] == 0) {
-			int f = fibonacci(n-1,arr) + fibonacci(n-2,arr);
-			arr[n] = f;
+		if(memo[n] == 0) {
+			int f = fibonacci(n-1,memo) + fibonacci(n-2,memo);
+			memo[n] = f;
 		}
-		return arr[n];
+		return memo[n];
 	}
 
 }
