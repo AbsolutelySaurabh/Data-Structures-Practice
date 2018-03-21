@@ -12,7 +12,7 @@ int main(){
         cin>>arr[i];
     }
 
-    //int *arr = new arr(n);
+    map<int, int> mp;
 
     int count=0;
     for(int i=0;i<n-1;i++){
@@ -25,19 +25,34 @@ int main(){
         int num = arr[i];
         int new_num;
         for(int j=i+1;j<n;j++){
-            if(arr[j]%2==0){
-                even++;
-            }else{
-                odd++;
-            }
 
-            if(odd == even){
-                count++;
-            }
             new_num = num*10 + arr[j];
             num = new_num;
 
-            cout<<num<<endl;
+            if(mp.find(num)!=mp.end()){
+                if(mp.find(num)->second == 1){
+                    count++;
+                    cout<<mp.find(num)->first<<" It is found"<<endl;
+                }
+            }else{
+
+                if(arr[j]%2==0){
+                    even++;
+                }else{
+                    odd++;
+                    }
+
+                if(odd == even){
+                    count++;
+                //1 means odd==even
+                    mp.insert(pair<int, int>(num, 1));
+
+                }else{
+                    mp.insert(pair<int, int>(num, 0));
+                }
+
+            }
+
         }
         odd=0, even=0;
     }
