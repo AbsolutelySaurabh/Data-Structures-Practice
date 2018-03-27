@@ -17,7 +17,7 @@ public class MergeSort {
 			arr[i] = s.nextInt();
 		}
 		
-		mergeSort(arr);
+		mergeSort(arr);	
 		
 		s.close();
 	}
