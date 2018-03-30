@@ -1,14 +1,15 @@
 package heap;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class MinHeap {
 	
 	//similarly, max heap is the reverse
 	
-	int size = 0;
-	int capacity = 10;
-	int[] items = new int[capacity];
+	static int size = 0;
+	static int capacity = 10;
+	static int[] items = new int[capacity];
 
 	
 	private int getLeftChildIndex(int parentIndex) {
@@ -17,7 +18,7 @@ public class MinHeap {
 	private int getRightChildIndex(int parentIndex) {
 		return 2*parentIndex + 2;
 	}
-	private int getParentIndex(int childIndex) {
+	private static int getParentIndex(int childIndex) {
 		return (childIndex-1)/2;
 	}
 	
@@ -28,28 +29,29 @@ public class MinHeap {
 	private boolean hasRightChild(int index) {
 		return getRightChildIndex(index) < size;
 	}
-	private boolean hasParent(int index) {
+	private static boolean hasParent(int index) {
 		return getParentIndex(index)>=0;
 	}
 	
 	
+	@SuppressWarnings("unused")
 	private int leftChild(int index) {
 		return items[getLeftChildIndex(index)];
 	}
 	private int rightChild(int index) {
 		return items[getRightChildIndex(index)];
 	}
-	private int parent(int index) {
+	private static int parent(int index) {
 		return items[getParentIndex(index)];
 	}
 	
 	
-	private void swap(int indexOne, int indexTwo) {
+	private static void swap(int indexOne, int indexTwo) {
 		int temp = items[indexOne];
 		items[indexOne] = items[indexTwo];
 		items[indexTwo] = temp;
 	}
-	private void ensureExtraCapacity() {
+	private static void ensureExtraCapacity() {
 		if(size == capacity) {
 			//create a new copy of existing array with double capacity
 			//thats how arrayList works
@@ -58,12 +60,14 @@ public class MinHeap {
 		}
 	}
 	
+	@SuppressWarnings("unused")
 	private int peek() {
 		if(size == 0) throw new IllegalStateException();
 		return items[0];
 	}
 	
 	//remove and returns the top element and replace it with the last one, it the minimum one
+	@SuppressWarnings("unused")
 	private int poll() {
 		if(size == 0) throw new IllegalStateException();
 		
@@ -75,7 +79,7 @@ public class MinHeap {
 		
 	}
 	
-	private void add(int num) {
+	private static void add(int num) {
 		
 		ensureExtraCapacity();
 		items[size] = num;
@@ -83,7 +87,7 @@ public class MinHeap {
 		size++;
 	}
 	
-	private void heapifyUp() {
+	private static void heapifyUp() {
 		
 		int index = size;
 		//now to heapify up after adding at the last4
@@ -99,7 +103,7 @@ public class MinHeap {
 		 while(hasLeftChild(index)) {
 			 
 			 int minIndex = getLeftChildIndex(index);
-			 if(hasRightChild(index) && getRightChildIndex(index) < items[minIndex]) {
+			 if(hasRightChild(index) && rightChild(index) < items[minIndex]) {
 				 minIndex = getRightChildIndex(index);
 			 }
 			 
@@ -111,6 +115,36 @@ public class MinHeap {
 			 swap(index, minIndex);
 			 index = minIndex;
 		 }
+	}
+	
+	private static float median() {
+		if(size%2!=0) {
+			return (float)items[size/2];
+		}
+		return (float)(items[(size-1)/2] + items[size/2])/2;
+	}
+	
+	
+	public static void main(String[] args) {
+		
+		Scanner s = new Scanner(System.in);
+		int n = s.nextInt();
+		while(n>0) {
+			
+			//do MinHeap
+			int num = s.nextInt();
+			add(num);
+			
+			//now calculate the median
+			System.out.println(median());
+			
+			--n;
+		}
+		//print items
+		for(int i=0;i<size;i++) {
+			System.out.print(items[i] + " ");
+		}
+		s.close();
 	}
 }
 
