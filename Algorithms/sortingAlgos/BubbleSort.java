@@ -26,7 +26,7 @@ public class BubbleSort {
 	public static void main(String[] args){
 		
 		Scanner s = new Scanner(System.in);
-		ArrayList<Integer> arr = new ArrayList();
+		ArrayList<Integer> arr = new ArrayList<>();
 		int input = s.nextInt();
 		while(input!=-1){
 			arr.add(input);

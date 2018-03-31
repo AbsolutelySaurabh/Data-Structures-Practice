@@ -27,6 +27,7 @@ public class substring {
 		Scanner s = new Scanner(System.in);
 		String str = s.next();
 		System.out.println(checkMetal(str));
+		s.close();
 	}
 
 }

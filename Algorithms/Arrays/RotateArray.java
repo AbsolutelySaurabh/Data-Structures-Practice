@@ -40,6 +40,7 @@ public class RotateArray {
 	            a[a_i] = in.nextInt();
 	        }
 	        rotate(a, k);
+	        in.close();
 	    }
 
 }

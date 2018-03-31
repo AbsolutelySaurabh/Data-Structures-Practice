@@ -9,7 +9,7 @@ public class PairSumX {
 	public static void main(String[] args){
 		
 		s = new Scanner(System.in);
-		ArrayList arr = new ArrayList();
+		ArrayList<Integer> arr = new ArrayList<>();
 		
 		System.out.println("Enter the elements: ");
 		int n = s.nextInt();
@@ -23,7 +23,7 @@ public class PairSumX {
 		System.out.println("Enter x: ");
 		int x = s.nextInt();
 		
-		ArrayList pair = FindSum(arr, x);
+		ArrayList<Integer> pair = FindSum(arr, x);
 		
 		for(int i=0;i<pair.size();i++){
 			
@@ -42,9 +42,9 @@ public class PairSumX {
 	}
 	
 
-	public static ArrayList FindSum(ArrayList arr, int x){
+	public static ArrayList<Integer> FindSum(ArrayList<Integer> arr, int x){
 		
-		ArrayList pair = new ArrayList();
+		ArrayList<Integer> pair = new ArrayList<>();
 		
 		for(int i=0;i<arr.size();i++){
 			

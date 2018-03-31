@@ -1,5 +1,4 @@
 package searchingAlgos;
-import java.util.*;
 public class TernarySearch {
 
 	public static void main(String[] args) {

@@ -8,7 +8,7 @@ public class ReverseArrayWithoutAnotherArrray {
 		
 		s = new Scanner(System.in);
 		
-		ArrayList arr = new ArrayList();
+		ArrayList<Integer> arr = new ArrayList<>();
 		System.out.println("Enter the array: ");
 		int n = s.nextInt();
 		while(n!=-1){
@@ -17,8 +17,8 @@ public class ReverseArrayWithoutAnotherArrray {
 			n = s.nextInt();						
 		}
 		
-		ArrayList temp_reverse = arr;
-		ArrayList reversed = ReverseArray(temp_reverse, (int)temp_reverse.get(0), (int)temp_reverse.get(temp_reverse.size()-1),
+		ArrayList<Integer> temp_reverse = arr;
+		ArrayList<Integer> reversed = ReverseArray(temp_reverse, (int)temp_reverse.get(0), (int)temp_reverse.get(temp_reverse.size()-1),
 				0, temp_reverse.size()-1);
 		
 		System.out.println("After reversing : ");
@@ -26,7 +26,7 @@ public class ReverseArrayWithoutAnotherArrray {
 		
 	}
 	
-	public static ArrayList ReverseArray(ArrayList arr, int head, int tail, int startIndex, int endIndex ){
+	public static ArrayList<Integer> ReverseArray(ArrayList<Integer> arr, int head, int tail, int startIndex, int endIndex ){
 				
 		if(startIndex==endIndex || startIndex>endIndex){
 			
@@ -41,7 +41,7 @@ public class ReverseArrayWithoutAnotherArrray {
 
 	}
 	
-	public static void print(ArrayList arr, int index){
+	public static void print(ArrayList<Integer> arr, int index){
 		
 		if(index == arr.size()){
 			return;

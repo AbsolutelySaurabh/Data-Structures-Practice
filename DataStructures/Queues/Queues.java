@@ -22,15 +22,17 @@ public class Queues {
 		
 	    tail = add();
 	    
-	    Node temp = head;
+	    Node<Integer> temp = head;
 	    
 	    //if input 1, 2, 3, 4
 	    //then queue will print 1, 2, 3, 4 only but stack will print reverse as "head" at reverse position
 	    printOutput(temp);
+	    System.out.println(remove());
+	    s.close();
 		
 	}
 	
-	public static void printOutput(Node temp){
+	public static void printOutput(Node<Integer> temp){
 		
 		if(temp==null){
 			return;
@@ -44,20 +46,28 @@ public class Queues {
 	public static int remove(){
 		
 		if(head==null){
-			System.out.println("Stack is empty:  ");
+			System.out.println("Queue is empty:  ");
 			return -1;
 		}
 		
-		int value = tail.data;
-		Node temp = tail;
-		tail = tail.next;
+		// 	(tail)4 <-- 3 <-- 2 <-- 1(head)
+		
+		//remove returns
+		//head.data
+		
+		//add
+		//adds to the tail and returns the tail
+		
+		int value = head.data;
+		Node<Integer> temp = head;
+		head = head.next;
 		temp.next = null;
 		temp = null;
 		return value;
 	
 	}
 	
-	public static Node add(){
+	public static Node<Integer> add(){
 		
 		//This method will return the address of the last element of the Queue;
 		System.out.println("Enter the first element: ");
@@ -65,11 +75,11 @@ public class Queues {
 		while(input!=-1){
 			
 			if(head == null){
-				head = new Node(input);
+				head = new Node<Integer>(input);
 				tail = head;
 			}else{
 				
-			    Node newNode = new Node(input);
+			    Node<Integer> newNode = new Node<Integer>(input);
 			    tail.next = newNode;
 			    tail = newNode;			
 			}

@@ -31,7 +31,7 @@ public class Fibonacci {
 	
 	private static int fibonacci(int n, int[] memo) {
 		
-		//use an memoay to store values here with size() n+1;
+		//use an memo to store values here with size() n+1;
 		if(n==0) {
 			return 0;
 		}

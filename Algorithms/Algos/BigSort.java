@@ -41,14 +41,16 @@ public class BigSort {
 			unsorted[i] = s.next();
 		}
 		
-		ArrayList<BigInteger> ar = new ArrayList();
+		ArrayList<BigInteger> ar = new ArrayList<>();
 		for(int i=0;i<n;i++) {
 			ar.add(new BigInteger(unsorted[i]));
 		}
 		ar.sort(null);
 		
-		String[] sorted = sort(unsorted);
+		//String[] sorted = sort(unsorted);
 		printArray(ar, 0);
+		
+		s.close();
 		
 	}
 

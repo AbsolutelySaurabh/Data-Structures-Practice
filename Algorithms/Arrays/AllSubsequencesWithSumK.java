@@ -96,7 +96,7 @@ public class AllSubsequencesWithSumK {
 		}
 		
 		System.out.println("ans: " + count(arr, sum));
-		
+		s.close();
 	}
 
 }

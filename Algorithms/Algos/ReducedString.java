@@ -38,7 +38,7 @@ public class ReducedString {
 	public static String printReduced(String input){
 		
 		//Character is a wrapper class for char, like Integer for int						
-		Stack<Character> s = new Stack();
+		Stack<Character> s = new Stack<>();
 		s.push(' ');
 		int index=0;
 		while(index<input.length()){

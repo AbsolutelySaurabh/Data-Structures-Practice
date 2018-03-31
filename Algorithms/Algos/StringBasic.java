@@ -33,6 +33,8 @@ public class StringBasic {
 		bb.compareTo(b);
 		//if > then returns = 1, if < then returns =-1, = if equal
 		
+		s.close();
+		
 	}
 	
 }

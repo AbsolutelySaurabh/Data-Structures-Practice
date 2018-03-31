@@ -12,6 +12,7 @@ public class ReverseNumber {
 			str+=String.valueOf(n).charAt(i);
 		}
 		System.out.println(str);
+		s.close();
 	}
 
 }
