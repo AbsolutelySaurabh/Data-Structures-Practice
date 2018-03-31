@@ -14,11 +14,10 @@ public class HeapSort {
 		items[indexTwo] = temp;
 	}
 	
-	
 	private static void build_max_heap() {
 		
 		double index = items.length/2-1;
-		index = Math.floor(index);
+		//index = Math.floor(index);
 		while(index >= 0) {
 			
 			max_heapify((int)index, items.length);
@@ -51,21 +50,12 @@ public class HeapSort {
 		}
 	}
 	
-	
 	//Time complexity: O( NlogN )
 	private static void heapSort() {
 		
 		//Time complexity: O(n)
 		build_max_heap();
-		
-		
-		System.out.println("after max heap build: ");
-		for(int i=0;i<items.length;i++) {
-			System.out.print(items[i] + " ");
-		}
-		System.out.println("");
-		
-		
+
 		lastElement = items.length-1;
 		while(lastElement > 0) {
 			

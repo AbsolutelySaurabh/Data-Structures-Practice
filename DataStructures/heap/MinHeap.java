@@ -4,13 +4,10 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class MinHeap {
-	
-	//similarly, max heap is the reverse
-	
+		
 	static int size = 0;
 	static int capacity = 10;
 	static int[] items = new int[capacity];
-
 	
 	private int getLeftChildIndex(int parentIndex) {
 		return 2*parentIndex + 1;
