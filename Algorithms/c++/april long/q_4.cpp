@@ -11,11 +11,13 @@ long long count_a = 0, count_b = 0, a_count = 0;
 void subString(string input, string output){
 
     if(input.size() == 0){
+        cout<<"output: "<<output<<endl;
         mp.insert(pair<string, int>(output, 1));
         return;
     }
 
     subString(input.substr(1) , output + input[0]);
+    cout<<"output: "<<output<<endl;
     mp.insert(pair<string, int>(output, 1));
 
 }
@@ -44,7 +46,7 @@ int main(){
         long long n;
         cin>>n;
 
-        subString(str);
+        subString(str,"");
 
         for(it = mp.begin();it!=mp.end();it++){
             count_a_b(it->first);
@@ -55,12 +57,7 @@ int main(){
         }
 
         int num = n;
-        if(a_count!=0){
 
-            while(num > 0){
-
-            }
-        }
 
         cout<<a_count<<endl;
 

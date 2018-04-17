@@ -4,16 +4,14 @@ using namespace std;
 
 int M = 1000000007;
 
-long long int calc_power(int num, int n){
-
-    if(n==0){
-        return 1;
+long long int power (long long int a, long long int b) {
+    long long int ans=1ll;
+    while(b) {
+        if(b&1)ans=(ans*a)%M;
+        a=(a*a)%M;
+        b=b/2;
     }
-
-    if(n == 1){
-        return num;
-    }
-    return (10*calc_power(num, --n)) % M;
+    return ans;
 }
 
 main(){
@@ -22,48 +20,35 @@ main(){
     cin>>t;
     while(t--){
 
-       // unsigned long long int n;
-        long long count = 0;
-        //cin>>n;
+        unsigned long long n;
+        unsigned long long count = 0;
 
-        string str;
-        long long int a,s,c;
-        cin>>str;
-        c=str.size();
-        long long int arr[c];
-        s=0;
-        int h = c;
-        unsigned long long int number = 0;
-        while(s!=c)
-        {
-            number = (number%M + ((str[s]-'0')*calc_power(10, h-1))%M )%M;
-            h--;
-            s++;
-        }
-
-        cout<<"number "<<number<<endl;
+        cin>>n;
 
         int req_weight;
         cin>>req_weight;
 
-        int k=10;
-        while(k<100){
+        int k = 10;
+        while(k<100) {
 
-            int lsb = k%10;
-            int msb = k/10;
+				int lsb = k%10;
+				int msb = k/10;
 
-            int weight = lsb-msb;
-            if(weight == req_weight){
-                count++;
-                k+=10;
-            }else{
-                k++;
-            }
+				int weight = lsb - msb;
+				if(weight == req_weight) {
+
+					count++;
+					k+=10;
+
+				}else {
+					k++;
+				}
         }
 
-        if(number>2){
-                count = (count*calc_power(10, number-2)) % M;
-            }
+        if(n%M>2){
+
+                count = (count%M * power(10, n-2)) % M;
+           }
 
         cout<<count<<endl;
     }
