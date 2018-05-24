@@ -49,12 +49,8 @@ class PriorityQueue{
 
         int arr_size = v.size();
         //need to go from down to up, for max heapify
-        int floor = 0;
-        if((arr_size)%2 == 0){
-            floor = (arr_size)/2 - 1;
-        }else{
-            floor = (arr_size)/2 -1;
-        }
+        int floor = (arr_size)/2 - 1;
+
         while(floor >= 0){
 
             int maxIndex = floor;
