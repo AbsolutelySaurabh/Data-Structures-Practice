@@ -4,5 +4,6 @@
 .settings
 .project
 bin
-.class
-.o
+*.class
+*.o
+*.exe
