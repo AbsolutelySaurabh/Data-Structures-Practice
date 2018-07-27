@@ -21,7 +21,8 @@ public class InsertionSort {
 					arr[k]=arr[j];
 					arr[j]=temp;
 					//as arr[i] has been shifted to the left
-					k--;
+                                        k--;
+                                        num = arr[k];
 				}
 			}
 		}

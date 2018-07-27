@@ -9,6 +9,7 @@ public class Permutations {
 			return;
 		}
 		for(int i=0;i< input.length();i++){	
+			//input.substring(1) -> means, starting from index: 1
 			permutationsHelper((input.substring(0, i) + input.substring(i+1)), output + input.charAt(i) );
 		}
 	}

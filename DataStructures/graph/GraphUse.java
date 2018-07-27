@@ -13,7 +13,7 @@ public class GraphUse {
 		
 		g.addEdge(a, b);
 		
-		g.print();
+		//g.print();
 				
 	}
 }

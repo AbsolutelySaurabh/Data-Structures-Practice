@@ -5,9 +5,9 @@ public class QuickSort {
 	//Quick sort in used by default methods in various languages.
 	//It has time complexity of O(n*log(n)) in average case and O(n^2) in worst case.
 	//But
-	//Here we use constant amount of memory unlike Merge sort, hence quick sort is an in-place algo.
+	//Here we use constant amount of memory unlike Merge sort, hence quick sort is an in-place algorithm,  but not stable algorithm.
 	//We use randomized quick sort in order to avoid worst case scenario.
-	//Here qe do not require extra space for merging arrays like in merge sort.
+	//Here we do not require extra space for merging arrays like in merge sort.
 	
 	//The logic is take an element( say arr[n-1]) as a pivot.
 	//and take partitionIndex = start initially and then run a for loop from (start -> n-1)
@@ -25,6 +25,8 @@ public class QuickSort {
 		//pIndex = partitionIndex
 		int pIndex = start;
 		for(int i=start;i<end;i++) {
+			
+			//this works for { 2, 4, 1, 3 }
 			if(arr[i] <= pivot) {
 				swap(arr, i, pIndex);
 				pIndex++;

@@ -10,14 +10,6 @@ public class Graph {
 		return vertices.size();
 	}
 	
-	public int numEdges() {
-		int num = 0;
-		for(int i=0; i<vertices.size();i++) {
-			num += vertices.get(i).countEdges();
-		}
-		return num/2;
-	}
-	
 	public void addVertex(int data) {
 		
 		Vertex v = new Vertex(data);
@@ -27,7 +19,7 @@ public class Graph {
 	public int isVertexPresent(int d) {
 		for(int i = 0; i< vertices.size(); i++) {
 			if(vertices.get(i).data == d) {
-				System.out.println("vertex exists at index: " + i);
+				//System.out.println("vertex exists at index: " + i);
 				return i;
 			}
 		}
@@ -36,33 +28,39 @@ public class Graph {
 	
 	public void addEdge(int data1, int data2) {
 		
-		//check if any of em exists or not
-		if( (isVertexPresent(data1) == -1) || (isVertexPresent(data2) == -1)) {
-			return;
-		}
-		
-		int index1 = isVertexPresent(data1);
-		int index2 = isVertexPresent(data2);
-		Vertex v1 = vertices.get(index1);
-		Vertex v2 = vertices.get(index2);
+		//check if edge present
+//		
+//		int index1 = isVertexPresent(data1);
+//		int index2 = isVertexPresent(data2);
+//		
+//		System.out.println("edge between : " + data1 + " " + data2);
+//		System.out.println("indices : " + index1 + " " + index2);
+
+		Vertex v1 = vertices.get(data1);
+		Vertex v2 = vertices.get(data2);
 		
 		//check if edge already exists
 		if(v1.isAdjacent(v2)) {
 			return;
 		}
 		
-		Edge newEdge = new Edge(v1, v2);
-		v1.addEdge(newEdge);
-		v2.addEdge(newEdge);
+		Edge newEdge_v1 = new Edge(v1, v2);
+		v1.addEdge(newEdge_v1);
+		Edge newEdge_v2 = new Edge(v2, v1);
+		v2.addEdge(newEdge_v2);
 		
 	}
 	
-	public void print() {
-		
-		System.out.println("vertices size: " + vertices.size());
-		for(int i=0;i<vertices.size();i++) {
-			vertices.get(i).print();
-		}
+	public Vector<Vertex> getVertices(){
+		return vertices;
 	}
+	
+//	public void print() {
+//		
+//		System.out.println("vertices size: " + vertices.size());
+//		for(int i=0;i<vertices.size();i++) {
+//			vertices.get(i).print();
+//		}
+//	}
 
 }

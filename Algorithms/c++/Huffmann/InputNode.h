@@ -2,14 +2,15 @@
 #define INPUTNODE_H
 #include<bits/stdc++.h>
 
+template <typename T>
 class InputNode{
 
     public:
         int frequency;
-        char data;
+        T data;
 
     public:
-        InputNode(char data, int frequency){
+        InputNode(T data, int frequency){
             this->data = data;
             this->frequency = frequency;
         }
