@@ -33,7 +33,7 @@ public class SpiralMatrix {
 			
 			
 			int i, j;
-			//System.out.println("prev_up: " + prev_up + " prev_down: " + prev_down + " prev_left: " + up_start + " prev_right: " + prev_right);
+			//System.out.println("prev_ " + prev_up + " prev_down: " + prev_down + " prev_left: " + up_start + " prev_right: " + prev_right);
 			for(i = up_start, j = up_start; j<=up_end ; j++) {
 				if(o_index < output.length) {
 					output[o_index] = arr[i][j];
