@@ -75,7 +75,7 @@ public class Graph {
 		visited_dir[v] = 1;
 		for(int i = 0; i<graph_dir[v].length; i++){
 			if(visited_dir[i] == 0 && graph_dir[v][i] == 1){
-				return isCyclicUtil(i, v);
+				return isCyclicUtilDir(i, v);
 			}else
 				if(visited_dir[i] == 1 && graph_dir[v][i] == 1 && i!=head){
 					return true;
@@ -112,11 +112,11 @@ public class Graph {
 			g_dir.addEdgeDirected(a, b);
 		}
 		g.print();
-		if(g.isCyclic()){
-			System.out.println("YES");
-		}else{
-			System.out.println("NO");
-		}
+//		if(g.isCyclic()){
+//			System.out.println("YES");
+//		}else{
+//			System.out.println("NO");
+//		}
 		if(g_dir.isCyclicDir()){
 			System.out.println("YES");
 		}else{

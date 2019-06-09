@@ -8,6 +8,13 @@ public class Graph {
 	 *Used Selection sort
 	 */
 	
+	/*
+	 * In case of detectPrint cycle:
+	 * 		 in directed graph : Use coloring method
+	 * 		 in unDiected graph : use i!=parent method
+	 * 
+	 */
+	
 	int graph[][];
 	int color[];
 	int edges;
@@ -31,7 +38,7 @@ public class Graph {
 	
 	public void addEdge(int a, int b){
 		graph[a][b] = 1;
-		graph[b][a] = 1;
+//		graph[b][a] = 1;
 	}
 	
 	public void dfs(int v, int head){
@@ -41,23 +48,24 @@ public class Graph {
 		parent[v] = head;
 		int ver = 0;
 		for(int i = 1; i<=vertices; i++){
-
 			if(graph[v][i] == 1 && color[i] == 0){
 				//parent[i] = v;
 				dfs(i, v);
-			}else
-				if(graph[v][i] == 1 && color[i] == 1 && head!=i){
+			}else {
+				if(graph[v][i] == 1 && color[i] == 1) {
 					//cycle exists
 					isCyclic = true;
 					ver = i;
 					cycle_number++;
-					break;
+					//break;	
+					printCycle(v, ver);
 				}
+			}
 		}
 		color[v] = 2; // colored black, where cycle detected
-		if(isCyclic == true){
-			printCycle(v, ver);
-		}
+//		if(isCyclic == true){
+//			printCycle(v, ver);
+//		}
 	}
 	
 	public void sort(){
